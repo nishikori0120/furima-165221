@@ -1,24 +1,45 @@
-# README
+## Users
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| Column   | Type   | Options    |
+| -------- | ------ | ---------- |
+| username | string | null:false |
+| email    | string | null:false |
+| password | string | null:false |
 
-Things you may want to cover:
+### Association
+- has_many :items
+- has_many :order
 
-* Ruby version
+## Items
 
-* System dependencies
+|Column       |Type        |Options                        |
+| ----------- | ---------- | ----------------------------- |
+| itemname    |string      | null:false                    |
+| category_id |integer     | null:false                    |
+| price       |integer     | null:false                    |
+| user        |references  | null:false, foreign_key: true |
 
-* Configuration
+### Association
+- belongs_to :user
+- has_one :order
 
-* Database creation
+## Orders
 
-* Database initialization
+|Column| Type       | Options                       |
+| ---- | ---------- | ----------------------------- |
+| user | references | null:false, foreign_key: true |
+| item | references | null:false, foreign_key: true |
 
-* How to run the test suite
+### Association
+- belongs_to :items
+- has_one : addresses
 
-* Services (job queues, cache servers, search engines, etc.)
+## Addresses
 
-* Deployment instructions
+|Column|Type|Options|
+| ------   | ---------- | ----------------------------- |
+| address  | string     | null:false                    |
+| buy      | references | null:false, foreign_key: true |
 
-* ...
+### Association
+- belongs_to :order
