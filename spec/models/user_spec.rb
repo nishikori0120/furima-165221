@@ -8,12 +8,12 @@ RSpec.describe User, type: :model do
     it "usernameが空だと登録できない" do
       @user.username = ""
       @user.valid?
-      expect(user.errors.full_messages).to include("名前を入力してください")
+      expect(@user.errors.full_messages).to include("名前を入力してください")
     end
     it "emailが空だと登録できない" do
       @user.email = ""
       @user.valid?
-      expect(user.errors.full_messages).to include("メールアドレスが入力されていません。")
+      expect(@user.errors.full_messages).to include("メールアドレスが入力されていません。")
     end
   end
 end
