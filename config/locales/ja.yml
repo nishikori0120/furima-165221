@@ -7,6 +7,27 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+            
+      models:
+        item:
+          attributes:
+            iteminfo:
+              taken: "は既に使用されています。"
+              blank: "が入力されておりません。ご確認の上、再度入力してください。"
+              too_short: "は%{count}文字以上に設定して下さい。"
+              too_long: "は%{count}文字以下に設定して下さい。"
+              invalid: "は有効でありません。"
+            image:
+              taken: "は既に使用されています。"
+              blank: "が選択されておりません。ご確認の上、再度選択してください。"
+              too_short: "は%{count}文字以上に設定して下さい。"
+              too_long: "は%{count}文字以下に設定して下さい。"
+              invalid: "は有効でありません。"
+              confirmation: "が内容とあっていません。"
+    attributes:
+      item:
+            iteminfo: "「商品の説明」"
+            image: "「出品画像」"
   date:
     abbr_day_names:
     - 日
