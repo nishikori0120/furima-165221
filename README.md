@@ -12,12 +12,17 @@
 
 ## Items
 
-|Column       |Type        |Options                        |
-| ----------- | ---------- | ----------------------------- |
-| itemname    |string      | null:false                    |
-| category_id |integer     | null:false                    |
-| price       |integer     | null:false                    |
-| user        |references  | null:false, foreign_key: true |
+| Column      | Type        | Options                       |
+| ----------- | ----------  | ----------------------------- |
+| itemname    | string      | null:false                    |
+| iteminfo    | text        | null:false                    |
+| category_id | integer     | null:false                    |
+|itemstatus_id| integer     | null:false                    |
+| feestatus_id| integer     | null:false                    |
+|prefecture_id| integer     | null:false                    |
+| delivery_id | integer     | null:false                    |
+| price       | integer     | null:false                    |
+| user        | references  | null:false, foreign_key: true |
 
 ### Association
 - belongs_to :user
