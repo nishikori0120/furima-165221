@@ -9,8 +9,8 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   #空の投稿を保存できないようにする
-  validates :itemname, presence: true
-  validates :iteminfo, presence: true
+  validates :itemname, presence: true, length: { maximum: 40 } 
+  validates :iteminfo, presence: true, length: { maximum: 1000 }
   validates :price, presence: true
   validates :image, presence: true
 
