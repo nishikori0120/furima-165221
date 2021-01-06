@@ -34,11 +34,12 @@ ja:
               confirmation: "が内容とあっていません。"
             price:
               blank: "が入力されておりません。"
+              greater_than_or_equal_to: は%{count}円以上にしてください
 
               
     attributes:
       item:
-        itemname: "「商品の名前」"
+        itemname: "「商品名」"
         iteminfo: "「商品の説明」"
         image: "「出品画像」"
         price: "「価格」"
