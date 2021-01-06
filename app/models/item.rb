@@ -11,7 +11,11 @@ class Item < ApplicationRecord
   #空の投稿を保存できないようにする
   validates :itemname, presence: true, length: { maximum: 40 } 
   validates :iteminfo, presence: true, length: { maximum: 1000 }
-  validates :price, presence: true
+  validates :price, presence: true, 
+    :numericality => { 
+      greater_than_or_equal_to: 300, 
+      less_than_or_equal_to: 9999999
+    }
   validates :image, presence: true
 
   #ジャンルの選択が「--」の時は保存できないようにする
