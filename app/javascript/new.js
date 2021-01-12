@@ -1,4 +1,4 @@
-function calc(){
+const calc = () => {
   const price = document.getElementById('item-price')
   const tax = document.getElementById('add-tax-price')
   const profit = document.getElementById('profit')
@@ -11,4 +11,4 @@ function calc(){
   }) 
 }
 
-window.addEventListener('load', calc)
+window.addEventListener('load',calc)
