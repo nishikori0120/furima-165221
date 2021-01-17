@@ -1,4 +1,5 @@
 class Order < ApplicationRecord
-  belongs_to :items
-  # has_one :addresses
+  belongs_to :item
+  has_one :address
+  
 end
