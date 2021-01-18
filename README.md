@@ -43,7 +43,11 @@
 
 |Column|Type|Options|
 | ------   | ---------- | ----------------------------- |
+<<<<<<< Updated upstream
 | postcode | integer    | null:false                    |
+=======
+| postcode | integer     | null:false                    |
+>>>>>>> Stashed changes
 |prefecture| string     | null:false                    |
 | city     | string     | null:false                    |
 | street   | string     | null:false                    |

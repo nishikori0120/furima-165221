@@ -7,6 +7,7 @@
     </h1>
     <%# 購入内容の表示 %>
     <div class='buy-item-info'>
+<<<<<<< Updated upstream
       <%= image_tag @item.image, class: 'buy-item-img' %>
       <div class='buy-item-right-content'>
         <h2 class='buy-item-text'>
@@ -15,6 +16,16 @@
         <div class='buy-item-price'>
           <p class='item-price-text'>¥ <%= @item.price %></p>
           <p class='item-price-sub-text'>&nbsp;(<%= @item.feestatus.name %>)</p>
+=======
+      <%= image_tag "item-sample.png", class: 'buy-item-img' %>
+      <div class='buy-item-right-content'>
+        <h2 class='buy-item-text'>
+          <%= "商品名" %>
+        </h2>
+        <div class='buy-item-price'>
+          <p class='item-price-text'>¥<%= 999,999,999 %></p>
+          <p class='item-price-sub-text'><%= '配送料負担' %></p>
+>>>>>>> Stashed changes
         </div>
       </div>
     </div>
@@ -26,14 +37,22 @@
         支払金額
       </h1>
       <p class='item-payment-price'>
+<<<<<<< Updated upstream
         ¥ <%= @item.price %>
+=======
+        ¥<%= "販売価格" %>
+>>>>>>> Stashed changes
       </p>
     </div>
     <%# /支払額の表示 %>
 
+<<<<<<< Updated upstream
     
     <%= form_with(model:@buyinfo, url: item_orders_path, id: 'charge-form', class: 'transaction-form-wrap',local: true) do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
+=======
+    <%= form_with id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
+>>>>>>> Stashed changes
     <%# カード情報の入力 %>
     <div class='credit-card-form'>
       <h1 class='info-input-haedline'>
@@ -44,7 +63,11 @@
           <label class="form-text">カード情報</label>
           <span class="indispensable">必須</span>
         </div>
+<<<<<<< Updated upstream
         <%= f.text_field :number, class:"input-default", id:"card-number", placeholder:"カード番号(半角英数字)", maxlength:"16" %>
+=======
+        <%= f.text_field 'hoge', class:"input-default", id:"card-number", placeholder:"カード番号(半角英数字)", maxlength:"16" %>
+>>>>>>> Stashed changes
         <div class='available-card'>
           <%= image_tag 'card-visa.gif', class: 'card-logo'%>
           <%= image_tag 'card-mastercard.gif', class: 'card-logo'%>
@@ -58,9 +81,15 @@
           <span class="indispensable">必須</span>
         </div>
         <div class='input-expiration-date-wrap'>
+<<<<<<< Updated upstream
           <%= f.text_area :exp_month, class:"input-expiration-date", id:"card-exp-month", placeholder:"例)3" %>
           <p>月</p>
           <%= f.text_area :exp_year, class:"input-expiration-date", id:"card-exp-year", placeholder:"例)23" %>
+=======
+          <%= f.text_area 'hoge', class:"input-expiration-date", id:"card-exp-month", placeholder:"例)3" %>
+          <p>月</p>
+          <%= f.text_area 'hoge', class:"input-expiration-date", id:"card-exp-year", placeholder:"例)23" %>
+>>>>>>> Stashed changes
           <p>年</p>
         </div>
       </div>
@@ -69,7 +98,11 @@
           <label class="form-text">セキュリティコード</label>
           <span class="indispensable">必須</span>
         </div>
+<<<<<<< Updated upstream
         <%= f.text_field :cvc, class:"input-default", id:"card-cvc", placeholder:"カード背面4桁もしくは3桁の番号", maxlength:"4" %>
+=======
+        <%= f.text_field "hoge",class:"input-default", id:"card-cvc", placeholder:"カード背面4桁もしくは3桁の番号", maxlength:"4" %>
+>>>>>>> Stashed changes
       </div>
     </div>
     <%# /カード情報の入力 %>
@@ -91,7 +124,11 @@
           <label class="form-text">都道府県</label>
           <span class="indispensable">必須</span>
         </div>
+<<<<<<< Updated upstream
         <%= f.collection_select(:prefecture, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+=======
+        <%= f.collection_select(:prefecture, [], :hoge, :hoge, {}, {class:"select-box", id:"prefecture"}) %>
+>>>>>>> Stashed changes
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
