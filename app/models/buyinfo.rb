@@ -4,10 +4,10 @@ class Buyinfo
   attr_accessor :postcode, :prefecture, :city, :street, :building, :tel, :item_id, :user_id, :order_id, :token
 
   with_options presence: true do
-    validates :postcode, format: { with: /\A[0-9]{3}-[0-9]{4}\z/ ,message: :invalid }  
+    validates :postcode, format: { with: /\A\d{3}[-]\d{4}\z/ }  
     validates :city
     validates :street
-    validates :tel
+    validates :tel, format: { with: /\A\d{11}\z/ }
     validates :token
   end
 
