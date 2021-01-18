@@ -1,15 +1,16 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: :new
-  before_action :set_find, only:[:show, :edit, :update]
+  before_action :set_find, only:[:edit, :update]
 
   def index
     @items = Item.includes(:user)
+    @orders = Order.includes(:item)
   end
-
+  
   def new
     @item  = Item.new
   end
-
+  
   def create
     item = Item.new(item_params)
     if item.save
@@ -22,6 +23,9 @@ class ItemsController < ApplicationController
   end
   
   def show   
+    @item = Item.find(params[:id])
+    @orders = Order.includes(:item)
+    # binding.pry
   end
   
   def edit   

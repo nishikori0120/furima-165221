@@ -43,8 +43,13 @@
 
 |Column|Type|Options|
 | ------   | ---------- | ----------------------------- |
-| address  | string     | null:false                    |
-| buy      | references | null:false, foreign_key: true |
+| postcode | integer    | null:false                    |
+|prefecture| string     | null:false                    |
+| city     | string     | null:false                    |
+| street   | string     | null:false                    |
+| building | string     | null:false                    |
+| tel      | integer    | null:false                    |
+| order    | references | null:false, foreign_key: true |
 
 ### Association
 - belongs_to :order
